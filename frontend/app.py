@@ -118,12 +118,14 @@ if st.button("Predict"):
         "age": age
     }
 
-    response = requests.post(
-        "https://diabetes-api-s42j.onrender.com/predict",#"http://localhost:8000/predict",
-        json=payload
-    )
+    with st.spinner("Running prediction..."):
 
-    result = response.json()["prediction"]
+        response = requests.post(
+            "https://diabetes-api-s42j.onrender.com/predict",
+            json=payload
+        )
+
+        result = response.json()["prediction"]
 
     st.subheader("Prediction Result")
 
