@@ -119,7 +119,7 @@ if st.button("Predict"):
     }
 
     response = requests.post(
-        "http://localhost:8000/predict",
+        "https://diabetes-api-s42j.onrender.com/predict",#"http://localhost:8000/predict",
         json=payload
     )
 
